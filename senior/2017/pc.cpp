@@ -5,11 +5,11 @@
 
 using namespace std;
 
-int* arr;
+long long* arr;
 
-int add(int n,int v){
+long long add(long long n,long long v){
 	
-	for(int i = 0; i < n; i++){
+	for(long long i = 0; i < n; i++){
 		
 		arr[i] = arr[i] ^ v;
 		
@@ -17,59 +17,59 @@ int add(int n,int v){
 	
 }
 
-void total(int L,int R){
+void total(long long L,long long R){
 	
-	int total = 0;
+	long long total = 0;
 	
-	for(int i = L - 1; i < R; i++){
+	for(long long i = L - 1; i < R; i++){
 		
 		total += arr[i];
 		
 	}
 	
-	printf("%d\n",total);
+	printf("%lld\n",total);
 	
 }
 
 int main(){
 	
-	int N,Q;
+	long long N,Q;
 	
 	scanf("%d %d",&N,&Q);
 	
-	arr = new int[N];
+	arr = new long long[N];
 	
-	for(int i = 0; i < N; i++){
+	for(long long i = 0; i < N; i++){
 		
 		arr[i] = 0;
 		
 	}
 	
-	for(int i = 0; i < N; i++){
+	for(long long i = 0; i < N; i++){
 	
-		scanf("%d",&arr[i]);
+		scanf("%lld",&arr[i]);
 	
 	}
 	
-	for(int i = 0; i < Q; i++){
+	for(long long i = 0; i < Q; i++){
 		
-		int a;
+		long long a;
 		
-		scanf("%d",&a);
+		scanf("%lld",&a);
 		
 		if(a == 1){
 			
-			int X;
+			long long X;
 			
-			scanf("%d",&X);
+			scanf("%lld",&X);
 			
 			add(N,X);
 			
 		}else if(a == 2){
 			
-			int L,R;
+			long long L,R;
 			
-			scanf("%d %d",&L,&R);
+			scanf("%lld %lld",&L,&R);
 			
 			total(L,R);
 			
@@ -80,5 +80,4 @@ int main(){
 		}
 		
 	}
-	
-} 
+}
